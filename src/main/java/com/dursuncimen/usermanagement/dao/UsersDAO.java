@@ -6,11 +6,15 @@ import com.dursuncimen.usermanagement.model.Users;
 
 public interface UsersDAO {
 
-	public void createUser(Users user);
+	public Users createUser(Users user);
 
 	public void deleteUser(Users user);
 
+	public void deleteUserById(String userId);
+	
 	public void update(Users user);
+	
+	public Users findById(String id);
 
 	public List<Users> findAllUsers();
 

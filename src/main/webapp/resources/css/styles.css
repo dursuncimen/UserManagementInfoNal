@@ -1,0 +1,168 @@
+/*	
+	Side Navigation Menu V2, RWD
+	===================
+	License:
+	https://goo.gl/EaUPrt
+	===================
+	Author: @PableraShow
+
+ */
+@charset "UTF-8";
+
+@import
+	url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	line-height: 1.42em;
+	color: #A7A1AE;
+	background-color: #1F2739;
+}
+
+h1.headline {
+	font-size: 3em;
+	font-weight: 300;
+	line-height: 1em;
+	text-align: center;
+	color: #4DC3FA;
+}
+
+h2 {
+	font-size: 1em;
+	font-weight: 300;
+	text-align: center;
+	display: block;
+	line-height: 1em;
+	padding-bottom: 2em;
+	color: #FB667A;
+}
+
+h2 a {
+	font-weight: 700;
+	text-transform: uppercase;
+	color: #FB667A;
+	text-decoration: none;
+}
+
+.blue {
+	color: #185875;
+}
+
+.yellow {
+	color: #FFF842;
+}
+
+.users-table  th h1 {
+	font-weight: bold;
+	font-size: 1em;
+	text-align: left;
+	color: #185875;
+}
+
+.users-table  td {
+	font-weight: normal;
+	font-size: 1em;
+	-webkit-box-shadow: 0 2px 2px -2px #0E1119;
+	-moz-box-shadow: 0 2px 2px -2px #0E1119;
+	box-shadow: 0 2px 2px -2px #0E1119;
+	border-radius: 0px;
+}
+
+.users-table {
+	text-align: left;
+	overflow: hidden;
+	width: 100%;
+	display: table;
+	padding: 0 0 8em 0;
+}
+
+.users-table  td, .users-table  th {
+	padding-bottom: 1%;
+	padding-top: 1%;
+	padding-left: 2%;
+}
+
+/* Background-color of the odd rows */
+.users-table  tr:nth-child(odd) {
+	background-color: #323C50;
+}
+
+/* Background-color of the even rows */
+.users-table  tr:nth-child(even) {
+	background-color: #2C3446;
+}
+
+.users-table  th {
+	background-color: #1F2739;
+}
+
+.users-table  td:first-child {
+	color: #FB667A;
+}
+
+.users-table  tr:hover {
+	background-color: #464A52;
+	-webkit-box-shadow: 0 6px 6px -6px #0E1119;
+	-moz-box-shadow: 0 6px 6px -6px #0E1119;
+	box-shadow: 0 6px 6px -6px #0E1119;
+}
+
+.users-table  td:hover {
+	background-color: #FFF842;
+	color: #403E10;
+	box-shadow: #7F7C21 -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px,
+		#7F7C21 -4px 4px, #7F7C21 -5px 5px, #7F7C21 -6px 6px;
+	transform: translate3d(6px, -6px, 0);
+	transition-delay: 0s;
+	transition-duration: 0.4s;
+	transition-property: all;
+	transition-timing-function: line;
+}
+
+.users-table  td:last-child:hover {
+	background-color: #464A52 !important;
+	color: #403E10;
+	box-shadow: none;
+	transform: none !important;
+	transition-delay: 0s;
+	transition-duration: 0.4s;
+	transition-property: all;
+	transition-timing-function: line;
+}
+
+.orange:hover {
+	background-color: #ffb800 !important;
+}
+
+.red:hover {
+	background-color: #Fb533A !important;
+}
+
+.progress  {
+	position: fixed;
+	bottom: 0%;
+	z-index:1002;
+}
+
+.progress-message{
+	position: fixed;
+	bottom: 2%;
+		width:100%;
+	text-align:center;
+	color:#fff;
+	z-index:1002;
+	font-weight: bold;
+	
+}
+..progress-message h1{font-size: 2.2rem;}
+
+.red {
+	color: #fff !important;
+}
+
+@media ( max-width : 800px) {
+	.users-table  td:nth-child(4), .users-table  th:nth-child(4) {
+		display: none;
+	}
+}

@@ -9,13 +9,14 @@ public class UsersDTO {
 	
 	private String id;
 	@NotNull(message="Kullanıcı Adı Boş Olamaz")
-	@Length(max=50,message="Kullanıcı Adı En Fazla 30 Karakter Olabilir")
+	@Length(max=30,message="Kullanıcı Adı En Fazla 30 Karakter Olabilir")
 	private String firstName;
 	@NotNull(message="Kullanıcı SoyAdı Boş Olamaz")
-	@Length(max=50,message="Kullanıcı SoyAdı En Fazla 30 Karakter Olabilir")
+	@Length(max=30,message="Kullanıcı SoyAdı En Fazla 30 Karakter Olabilir")
 	private String surName;
 	@NotNull(message="Kullanıcı Telefonu Boş Olamaz")
-	@Pattern(regexp="(^$|[0-9]{10})")
+	@Length(max=14,message="Kullanıcı Numarası En Fazla 14 Karakter Olabilir")
+	@Pattern(regexp="(\\(\\d{3}\\) \\d{3}-\\d{4})",message="Uygunsuz Telefon Numarası")
 	private  String phone;
 	
 	public UsersDTO() {

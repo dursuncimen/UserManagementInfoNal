@@ -20,21 +20,35 @@ public class UsersDAOImpl implements UsersDAO {
 
 	@Autowired
 	private MongoTemplate mongoTemplate;
-
+	/*
+	 * Insert new User in mongodb
+	 * @param Users 
+	 * Users's id should be null
+	 * return same Users object
+	 */	
 	@Override
-	public void createUser(Users user) {
+	public Users createUser(Users user) {
 		if (mongoTemplate.collectionExists(Users.class)) {
 			mongoTemplate.createCollection(Users.class);
 		}
 		user.setId(UUID.randomUUID().toString());
 		mongoTemplate.insert(user, COLLECTION_NAME);
+		return user;
 	}
-
+	
+	/*
+	 * Delete existing user 
+	 * @param Users 
+	 */	
 	@Override
 	public void deleteUser(Users user) {
 		mongoTemplate.remove(user, COLLECTION_NAME);
 	}
-
+	
+	/*
+	 * Update existing user	
+	 * @Param Users	 *   
+	 */
 	@Override
 	public void update(Users user) {
 		Query qry = new Query(Criteria.where("id").is(user.getId()));
@@ -45,10 +59,36 @@ public class UsersDAOImpl implements UsersDAO {
 		mongoTemplate.updateFirst(qry, update,COLLECTION_NAME);	
 
 	}
-
+	
+	/*
+	 * Find all user 
+	 * @return list Users
+	 */	
 	@Override
 	public List<Users> findAllUsers() {
 		return mongoTemplate.findAll(Users.class, COLLECTION_NAME);
+	}
+	
+	/*
+	 * Find user by user's id
+	 * @param string id
+	 * @return Users 
+	 */
+	@Override
+	public Users findById(String id) {
+		Query qry = new Query(Criteria.where("_id").is(id));
+		return (Users) mongoTemplate.findOne(qry, Users.class,COLLECTION_NAME);
+		
+	}
+	/*
+	 * Delete User by user's id
+	 * @param String userId
+	 */
+	@Override
+	public void deleteUserById(String userId) {
+		Query qry = new Query(Criteria.where("_id").is(userId));
+		deleteUser(mongoTemplate.findOne(qry, Users.class,COLLECTION_NAME));
+		
 	}
 	
 

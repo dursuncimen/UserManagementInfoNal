@@ -1,6 +1,6 @@
 UsersManagementInfoNal
 
-This project developed for Infonal's human resources.This Project about user crud operations. İn this application you can add new user, edit user, delete user and list all users.
+This project developed for Infonal's human resources.This Project about user crud operations. In this application you can add new user, edit user, delete user and list all users.
 
 This project was developed using the following technology:
 
@@ -12,8 +12,6 @@ Materialize CSS framework
 jQuery 2.1.1 
 Maven  2.5.1 
 
-
-You can see application from this address: http://46.101.93.97:8080
 
 
 
